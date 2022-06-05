@@ -2,6 +2,8 @@ package com.baseflow.permissionhandler;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
@@ -9,6 +11,11 @@ import io.flutter.embedding.engine.plugins.activity.ActivityAware;
 import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodChannel;
+
+import android.util.Log;
+
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Platform implementation of the permission_handler Flutter plugin.

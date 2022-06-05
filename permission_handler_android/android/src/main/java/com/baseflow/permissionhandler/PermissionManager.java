@@ -38,6 +38,8 @@ final class PermissionManager implements PluginRegistry.ActivityResultListener, 
 
     @Override
     public boolean onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        Log.d(PermissionConstants.LOG_TAG, "REACHED ACTIVITY REULT LISTENER ");
         if (requestCode != PermissionConstants.PERMISSION_CODE_IGNORE_BATTERY_OPTIMIZATIONS &&
                 requestCode != PermissionConstants.PERMISSION_CODE_MANAGE_EXTERNAL_STORAGE &&
                 requestCode != PermissionConstants.PERMISSION_CODE_SYSTEM_ALERT_WINDOW &&

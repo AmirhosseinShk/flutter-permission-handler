@@ -57,8 +57,9 @@ final class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler {
   @Override
     public void onMethodCall(@NonNull MethodCall call, @NonNull final Result result)
     {
+        Log.d(PermissionConstants.LOG_TAG , "im on MethodCall handler");
         if(activity == null) {
-            Log.d(PermissionConstants.LOG_TAG , "im on MethodCall handler");
+            Log.d(PermissionConstants.LOG_TAG , "activity is null");
             Intent intent = new Intent(applicationContext, FakeActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
             handlers.add(this);
@@ -66,6 +67,7 @@ final class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler {
             results.add(result);
             intent.putExtra("HANDLER_INDEX", handlers.size() - 1);
             intent.addFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             applicationContext.startActivity(intent);
         } else {

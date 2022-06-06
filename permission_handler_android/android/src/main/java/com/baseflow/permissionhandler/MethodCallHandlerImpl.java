@@ -60,12 +60,14 @@ final class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler {
     public void onMethodCall(@NonNull MethodCall call, @NonNull final Result result)
     {
         if(activity == null) {
+            Log.d(PermissionConstants.LOG_TAG , "im on MethodCall handler");
             Intent intent = new Intent(applicationContext, FakeActivity.class);
             handlers.add(this);
             calls.add(call);
             results.add(result);
             intent.putExtra("HANDLER_INDEX", handlers.size() - 1);
             intent.addFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             applicationContext.startActivity(intent);
         } else {
             switch (call.method) {

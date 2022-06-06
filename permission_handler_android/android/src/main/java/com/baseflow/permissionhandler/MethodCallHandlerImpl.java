@@ -48,8 +48,6 @@ final class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler {
     public static void handle(int index, FakeActivity activity) {
         MethodCallHandlerImpl handler = handlers.get(index);
         handler.setActivity(activity);
-        handler.setActivityRegistry(activity);
-        handler.setPermissionRegistry(activity);
         handler.onMethodCall(calls.get(index), results.get(index));
         handlers.remove(index);
         calls.remove(index);
@@ -62,6 +60,7 @@ final class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler {
         if(activity == null) {
             Log.d(PermissionConstants.LOG_TAG , "im on MethodCall handler");
             Intent intent = new Intent(applicationContext, FakeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
             handlers.add(this);
             calls.add(call);
             results.add(result);

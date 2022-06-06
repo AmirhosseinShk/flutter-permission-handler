@@ -15,9 +15,11 @@ import io.flutter.plugin.common.MethodChannel;
 
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class FakeActivity extends Activity implements PermissionManager.ActivityRegistry, PermissionManager.PermissionRegistry {
+public class FakeActivity extends Activity {
 
     private MethodChannel methodChannel;
     private MethodCallHandlerImpl methodCallHandler;

@@ -65,9 +65,8 @@ final class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler {
             results.add(result);
             intent.putExtra("HANDLER_INDEX", handlers.size() - 1);
             intent.addFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            applicationContext.startForegroundService(intent);
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT );
+            applicationContext.startActivity(intent);
         } else {
             switch (call.method) {
                 case "checkServiceStatus": {

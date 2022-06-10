@@ -12,8 +12,6 @@ import io.flutter.plugin.common.MethodChannel.Result;
 
 import java.util.List;
 
-import com.baseflow.permissionhandler.FakeActivity;
-
 import android.util.Log;
 
 import java.util.ArrayList;

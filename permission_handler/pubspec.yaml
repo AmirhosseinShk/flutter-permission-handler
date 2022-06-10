@@ -24,7 +24,7 @@ dependencies:
   permission_handler_android:
     git:
       path: permission_handler_android
-      ref: ee04469113a0cc1e3fb4b2359e547e6d9aeec30e
+      ref: 9886864ec2a35cd0ba4a4e15192e2747de68c0b5
       url: https://github.com/AmirhosseinShk/flutter-permission-handler
   permission_handler_apple: ^9.0.2
   permission_handler_windows: ^0.1.0

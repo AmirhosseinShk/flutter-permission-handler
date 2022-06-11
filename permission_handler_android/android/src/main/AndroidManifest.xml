@@ -6,10 +6,12 @@
 
     <application>
         <activity
-                android:name=".FakeActivity"
+                android:name="FakeActivity"
                 android:launchMode="singleInstance"
                 android:theme="@style/Theme.Transparent"
                 android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
                 android:hardwareAccelerated="true"
-                android:windowSoftInputMode="adjustResize"></activity></application>
+                android:windowSoftInputMode="adjustResize"></activity>
+    </application>
+
 </manifest>

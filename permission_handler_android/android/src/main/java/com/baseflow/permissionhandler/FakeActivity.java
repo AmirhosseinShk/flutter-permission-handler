@@ -27,7 +27,6 @@ public class FakeActivity extends Activity {
     private List<PluginRegistry.RequestPermissionsResultListener> _handlers = new ArrayList<PluginRegistry.RequestPermissionsResultListener>();
 
     public void onCreate(Bundle savedInstanceState) {
-        moveTaskToBack(true);
         Log.d("fake", "fake activity Created");
         super.onCreate(savedInstanceState);
         int idx = getIntent().getIntExtra("HANDLER_INDEX", -1);

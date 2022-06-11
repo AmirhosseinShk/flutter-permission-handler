@@ -65,7 +65,10 @@ final class MethodCallHandlerImpl implements MethodChannel.MethodCallHandler {
             results.add(result);
             intent.putExtra("HANDLER_INDEX", handlers.size() - 1);
             intent.addFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP);
-            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT );
+            intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+            if(applicationContext == null){
+                Log.d(PermissionConstants.LOG_TAG , "applicationContrxt is null !!!!!!");
+            }
             applicationContext.startActivity(intent);
         } else {
             switch (call.method) {
